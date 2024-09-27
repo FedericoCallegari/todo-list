@@ -1,3 +1,4 @@
+import todoStore from '../store/todo.store';
 import html from './app.html?raw';
 
 /**
@@ -8,7 +9,9 @@ export const App = (elementId)=>{
 
 
     const displayTodos = () => {
-
+        const todos = todoStore.getTodos( todoStore.getCurrentFilter() );
+        console.log(todos);
+        
     }
     //Funcion anonima auto invocada
     // Cuando la funcion App se llama 
