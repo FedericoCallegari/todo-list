@@ -1,5 +1,12 @@
 import todoStore from '../store/todo.store';
 import html from './app.html?raw';
+import { renderTodos } from './use-cases';
+
+
+const ElementIDs = {
+    todoList : '.todo-list',
+
+}
 
 /**
  * 
@@ -10,7 +17,7 @@ export const App = (elementId)=>{
 
     const displayTodos = () => {
         const todos = todoStore.getTodos( todoStore.getCurrentFilter() );
-        console.log(todos);
+        renderTodos(ElementIDs.todoList, todos);
         
     }
     //Funcion anonima auto invocada
