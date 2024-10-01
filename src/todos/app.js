@@ -40,6 +40,7 @@ export const App = (elementId)=>{
 
         todoStore.addTodo(event.target.value);
         displayTodos();
+        event.target.value = '';
     })
 
 }
