@@ -19,9 +19,9 @@ const state = {
 }
 
 const initStore = ()=>{
-    console.log(state);
-    
-    console.log('initStore');
+    //console.log(state);
+    // loadStore()
+    //console.log('initStore');
     
 }
 

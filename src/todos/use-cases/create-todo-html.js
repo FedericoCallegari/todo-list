@@ -25,12 +25,8 @@ export const createTodoHTML = ( todo )=>{
     liElement.innerHTML = html;
     liElement.setAttribute('data-id', id );
 
-    if( todo.done ){
+    if( todo.done )
         liElement.classList.add('completed');
-    }   
-    
-
-
 
 
     return liElement;
