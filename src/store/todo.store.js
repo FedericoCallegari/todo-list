@@ -14,14 +14,13 @@ const state = {
         new Todo('Piedra del tiempo'),
         
     ],
-    filter:Filters.All
+    filter: Filters.All
     
 }
 
 const initStore = ()=>{
-    //console.log(state);
     // loadStore()
-    //console.log('initStore');
+    console.log('initStore');
     
 }
 
@@ -35,7 +34,7 @@ const getTodos = (filter = Filters.All ) => {
         case Filters.All:
             return [...state.todos];
         case Filters.Completed:
-            return state.todos.filter(todo=> todo.done === true);
+            return state.todos.filter(todo=> todo.done );
         case Filters.Pending:
             return state.todos.filter(todo=> !todo.done);
         default:
@@ -59,10 +58,10 @@ const addTodo = (description) => {
  * 
  * @param {String} todoId 
  */
-const toggleTodo = (todoId)=>{
+const toggleTodo = ( todoId ) => {
     state.todos = state.todos.map( todo => {
         if(todo.id === todoId){
-            todo.done === !todo.done;
+            todo.done = !todo.done;
         }
         return todo;
     });
@@ -77,7 +76,7 @@ const deleteTodo = (todoId)=>{
 }
 
 const deleteCompleted = () => {
-    state.todos = state.todos.filter( todo => todo.done === true)
+    state.todos = state.todos.filter( todo => !todo.done )
 }
 
 
